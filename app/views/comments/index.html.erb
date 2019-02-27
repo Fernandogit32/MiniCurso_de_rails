@@ -1,0 +1,16 @@
+
+<%if @recipe.comments.size >0%>
+<%@comments.each do |comment| %>
+<p>
+  <%= comment.name %> <small><%=pluralize(comment.rating, 'estrela', 'estrelas')%></small>
+  <small><%= time_ago_in_words(comment.created_at)%> atrás</small>
+</p>
+<% end %>
+
+
+
+<% else %>
+<h1>não existem comentarios</h1>
+<% end %>
+
+<%= link_to 'Receitas' , recipes_path %>

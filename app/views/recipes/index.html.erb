@@ -1,0 +1,19 @@
+<h1><%= pluralize(@recipes.size, "Receita","Receitas")%></h1>
+
+<ul>
+
+    <% @recipes.each do |recipe| %>
+
+     <li>  <%= link_to recipe.name , recipe_path(recipe) %></li>     
+     <li>  <%= imagem(recipe) %></li>     
+     <li>  <%=recipe.duration.to_formatted_s(:time) %>min</li>     
+     <li> <%= recipe.stuff %></li>
+     <li> <%= formata_caloria(recipe) %></li>   
+     <li> <%= recipe.prepare_mode %></li>
+     <li> <%= number_to_currency(recipe.cost) %></li>
+      <hr>
+   <%end%> 
+     
+<li>  <%= link_to 'Criar receita' , new_recipe_path %></li>
+
+</ul>

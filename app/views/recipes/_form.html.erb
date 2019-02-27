@@ -1,0 +1,47 @@
+<%= form_for (@recipe) do |f| %>
+    <%= render 'layouts/errors', object: @recipe %>
+    
+        <p>
+            <%= f.label :Nome%>
+            <%= f.text_field :name %>
+        </p>
+
+        <p>
+            <%= f.label :Ingredientes%>
+            <%= f.text_area :stuff%>
+        </p>      
+
+        <p>
+            <%= f.label :calorias%>
+            <%= f.text_area :calories%>
+        </p>
+
+         <p>
+            <%= f.label :Modo_de_preparo%>
+            <%= f.text_field :prepare_mode %>
+        </p>     
+                 
+        <p>
+            <%= f.label :Custo%>
+            <%= f.number_field :cost%>
+        </p>
+
+        <p>
+            <%= f.label :Tempo_de_preparo%>
+            <%= f.time_select :duration%>
+        </p>   
+
+         <p>
+            <%= f.label :Poster%>
+            <%= f.text_field :poster, placeholder: ".GIF, .JPEG OU .PNG" %>
+        </p> 
+       
+
+        <p>            
+            <%= f.submit%>
+            <%= link_to "Cancelar", root_path %> 
+        </p>
+
+    
+<% end %>
+   

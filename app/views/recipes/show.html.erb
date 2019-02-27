@@ -1,0 +1,14 @@
+<header>
+    <h1><%= @recipe.name %></h1>
+    <h1><%= imagem(@recipe) %></h1>     
+     <h1><%=@recipe.duration.to_formatted_s(:time) %>min</h1> 
+    <h1><%= @recipe.stuff %></h1>
+    <h1><%= @recipe.calories %></h1>
+    <h1><%= @recipe.prepare_mode %></h1>
+    <h1><%= @recipe.cost %></h1>
+</header>
+<%= link_to pluralize(@recipe.comments.size, 'Comentários', 'Comentários'),recipe_comments_path(@recipe) %>
+<%= link_to 'Novo Comentário', new_recipe_comment_path(@recipe)%>
+<%= link_to "Receitas", recipes_path %>
+<%= link_to "Editar Receita", edit_recipe_path(@recipe) %>
+<%= link_to "Excluir Receita", recipe_path(@recipe), method: :delete,  data: {confirm: "Deseja escluir esta receita?"} %>
